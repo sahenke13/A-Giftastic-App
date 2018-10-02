@@ -27,9 +27,16 @@ $(document).ready(function(){
         $(document).on('click','#optionGif', function(){
             gifChosen = $(this).attr("data-gifTag");
             // need to put logic here to offset if the icon is clicked a second or third time.
-            // let offset = parseInt($(this).attr("offset"))
-            console.log(offset);
-            buttonClicked(gifChosen);
+            var offsetCountStr = $(this).attr("data-count");
+            console.log(offsetCountStr);
+            var offsetCountInt = parseInt(offsetCountStr);
+            console.log(offsetCountInt);
+            buttonClicked(gifChosen, offsetCountStr);
+            offsetCountInt+=10;
+            console.log(offsetCountInt);
+            offsetCountStr = offsetCountInt.toString();
+            console.log(offsetCountStr);
+            $(this).attr("data-count",offsetCountStr)
         });
 
         //clear function to clear buttons and gifs images.  Will not delete favorite gifs
@@ -44,7 +51,7 @@ $(document).ready(function(){
         function renderButtons(){
             for (let i in gifChoices)
             {
-                choiceBank.append("<button id = 'optionGif' data-gifTag =" + gifChoices[i] + ">" +gifChoices[i] + "</button>");
+                choiceBank.append("<button id = 'optionGif' data-gifTag =" + gifChoices[i] + " data-count = '0'>" +gifChoices[i] + "</button>");
             }
         };
 
@@ -98,11 +105,11 @@ $(document).ready(function(){
 
         //a button clicked function to up query and make ajax function call.
 
-    function buttonClicked(gifName){
+    function buttonClicked(gifName, offset){
 
         imageBankTitle.text(gifName.toUpperCase() + " GIFs")
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=174LnYydojrFSsBxwowWXgnph961v0ry&q=" + gifName + "&limit=10&offset=0rating=R&lang=en"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=174LnYydojrFSsBxwowWXgnph961v0ry&q=" + gifName + "&limit=10&offset="+offset+"rating=R&lang=en"
             console.log(queryURL);
 
         $.ajax({
@@ -122,7 +129,7 @@ $(document).ready(function(){
                 gifImage.attr("data-animate",dataGif[i].images.fixed_height.url);
                 gifImage.attr("data-state","animate");
                 gifImage.attr("class","img-fluid");
-                gifImage.attr("offset", "0");
+               
                 
                 var icon =$("<img>");
                 icon.attr("src", "./images/starNotFull.png");
