@@ -27,7 +27,8 @@ $(document).ready(function(){
         $(document).on('click','#optionGif', function(){
             gifChosen = $(this).attr("data-gifTag");
             // need to put logic here to offset if the icon is clicked a second or third time.
-
+            // let offset = parseInt($(this).attr("offset"))
+            console.log(offset);
             buttonClicked(gifChosen);
         });
 
@@ -121,6 +122,7 @@ $(document).ready(function(){
                 gifImage.attr("data-animate",dataGif[i].images.fixed_height.url);
                 gifImage.attr("data-state","animate");
                 gifImage.attr("class","img-fluid");
+                gifImage.attr("offset", "0");
                 
                 var icon =$("<img>");
                 icon.attr("src", "./images/starNotFull.png");
