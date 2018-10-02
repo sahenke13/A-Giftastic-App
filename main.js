@@ -101,7 +101,7 @@ $(document).ready(function(){
 
         imageBankTitle.text(gifName.toUpperCase() + " GIFs")
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=174LnYydojrFSsBxwowWXgnph961v0ry&q=" + gifName + "&limit=10&offset=10rating=R&lang=en"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=174LnYydojrFSsBxwowWXgnph961v0ry&q=" + gifName + "&limit=10&offset=0rating=R&lang=en"
             console.log(queryURL);
 
         $.ajax({
