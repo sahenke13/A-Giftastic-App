@@ -1,17 +1,27 @@
-h1{
-    text-align: center;
-    background:lightblue;
+ h1{
+    text-align: center; 
     color: blue;
     margin-bottom: 0;
     width:100%;
 }
+
+
 #masthead{
     color: red;
+    background: orangered;
+    font-family: 'Muli', sans-serif;
+    height:80px;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0; 
+    z-index:10;
 
     }
+
 body{
     margin: 0;
-    background: gray;
+    background: url("./images/full-bloom.png")
    
 }
 #selectGif{
@@ -25,46 +35,72 @@ input {
   text-align: center;
 }
 #gifChoiceSection{
-    height: 100%;
+    top: 80px;
+    bottom: 20px;
     width: 25%;
     left: 0;
-    background: gray;
-    position: absolute;
+    background: tan;
+    position: fixed;
     margin: 0;
 }
 #gifImageSection{
-    background: aqua;
+    
     left: 25%;
     width: 40%;
     float: left;
     position: relative;
-    
-
+    font-family: 'Muli', sans-serif;
+    top:80px;
 }
+
 .img-fluid{
     width: 80%;
     height: auto;
-
 }
+
 #favoriteIcon{
     display: flex;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-
 }
+
 #favoriteSection{
-    background: purple;
     position: relative;
     width: 35%;
     float: right;
     margin:0;
+    font-family: 'Muli', sans-serif;
+    top: 80px;
+}
 
+#footer{
+    height:40px;
+    padding:10px;
+    background: orangered;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+.myButton{
+    color: white;
+    background: blue;
+    border: 2px solid red;
+    border-radius: 25px;
+}
+#optionGif{
+    color: white;
+    background: orangered;
+    border: 2px solid blue;
+    border-radius: 25px;
 
 }
 
 #gif-Input{
-    width: 70%;
+    width: 50%;
 
 }
 
@@ -72,34 +108,47 @@ input {
     
 
     #gifChoiceSection{
-        height: 20%;
+        height: 7%;
         width: 100%;
         float: left;
-        background: gray;
+        background: tan;
         position: absolute;
         margin: 0;   
-        top: 50px;
+        top: 80px;
+        bottom:20px;
+        padding-top:20px;
   }
     #favoriteSection{
-        background: purple;
+      
         position: relative;
         width: 50%;
         float: right;
         margin:0;
-        top: 165px;
+        top: 250px;
     }
     #gifImageSection{
-        background: aqua;
+        
         left: 0;
         width: 50%;
         float: left;
         position: relative;
-        top:165px;
+        top:250px;
         
     }
 
+    
+#gif-Input{
+    width: 30%;
 
-  .clearfix {
-    overflow: auto;
 }
+}
+@media screen and (max-width: 770px) {
+
+
+    #gifChoiceSection{
+        padding-bottom: 100px;
+    }
+
+
+
 }

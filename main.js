@@ -16,10 +16,12 @@ $(document).ready(function(){
         {
             choiceBank.empty();
             event.preventDefault();
+           
             var newGif = gifPicked.val();
             gifChoices.push(newGif);
             console.log(gifChoices);
             renderButtons();
+            $("#gif-input").val(" ");
         })
 
         $(document).on('click','#optionGif', function(){
